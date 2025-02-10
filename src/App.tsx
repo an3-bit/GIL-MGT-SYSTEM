@@ -6,12 +6,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Sidebar } from "./components/layout/Sidebar";
 import Index from "./pages/Index";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  const isAuthPage = window.location.pathname === "/" || window.location.pathname === "/register";
+  const isAuthPage = ["/", "/login", "/register"].includes(window.location.pathname);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -22,6 +25,9 @@ const App = () => {
           {!isAuthPage && <Sidebar />}
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

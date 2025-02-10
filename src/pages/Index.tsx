@@ -8,11 +8,7 @@ const Index = () => {
 
   const handleLogin = () => {
     setIsLoading(true);
-    // Simulating login for now
-    setTimeout(() => {
-      setIsLoading(false);
-      navigate('/dashboard');
-    }, 1000);
+    navigate('/login');
   };
 
   return (
@@ -40,7 +36,7 @@ const Index = () => {
                   disabled={isLoading}
                   className="btn-primary px-8 py-3 text-lg"
                 >
-                  {isLoading ? 'Logging in...' : 'Login'}
+                  {isLoading ? 'Please wait...' : 'Login'}
                 </button>
                 <button
                   onClick={() => navigate('/register')}
