@@ -4,7 +4,8 @@ from rest_framework.routers import DefaultRouter
 from GIL.views import (
     TitleTransferTypesViewSet, TitleProcessViewSet,
     ClientViewSet, SurveyorViewSet,
-    PaymentViewSet, TitleDocumentViewSet
+    PaymentViewSet, TitleDocumentViewSet,
+    UserRegistrationView, UserLoginView
 )
 
 # Initialize the router
@@ -19,6 +20,10 @@ router.register(r'payments', PaymentViewSet)
 router.register(r'title-documents', TitleDocumentViewSet)
 
 urlpatterns = [
+    # Authentication endpoints
+    path('v1/register/', UserRegistrationView.as_view(), name='register'),
+    path('v1/login/', UserLoginView.as_view(), name='login'),
+    
     # Client endpoints
     path('v1/clients/', ClientViewSet.as_view({'get': 'list', 'post': 'create'})),
     path('v1/clients/<int:pk>/', ClientViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'})),
