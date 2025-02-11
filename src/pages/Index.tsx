@@ -12,41 +12,55 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-secondary to-primary">
+    <div className="min-h-screen flex flex-col bg-[#1A1F2C]">
       <div className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-16">
             <div className="space-y-8 animate-fadeIn">
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-6xl font-bold text-white">
+              <div className="space-y-6 text-center">
+                <h1 className="text-4xl md:text-6xl font-bold text-white max-w-4xl mx-auto leading-tight">
                   Delivering clear, reliable{' '}
-                  <span className="text-red-400">solutions</span>
+                  <span className="text-red-400">solutions</span> for Great
+                  Guardian Investment Ltd at accessible rates.
                 </h1>
-                <h2 className="text-xl md:text-2xl text-white/80">
-                  for Great Guardian Investment Ltd at accessible rates.
-                </h2>
-                <p className="text-lg text-white/60">
+                <p className="text-xl text-gray-400 max-w-2xl mx-auto">
                   Our proven methods are designed to simplify, accelerate, and support your property needs.
                 </p>
               </div>
               
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center">
                 <button
                   onClick={handleLogin}
                   disabled={isLoading}
-                  className="btn-primary px-8 py-3 text-lg"
+                  className="bg-[#1EAEDB] hover:bg-[#0FA0CE] text-white font-medium px-12 py-3 rounded-full transition-colors"
                 >
                   {isLoading ? 'Please wait...' : 'Login'}
                 </button>
                 <button
                   onClick={() => navigate('/register')}
-                  className="btn-secondary px-8 py-3 text-lg"
+                  className="bg-[#1EAEDB] hover:bg-[#0FA0CE] text-white font-medium px-12 py-3 rounded-full transition-colors"
                 >
                   Register
+                </button>
+                <button
+                  onClick={() => navigate('/dashboard')}
+                  className="border-2 border-[#1EAEDB] text-[#1EAEDB] hover:bg-[#1EAEDB] hover:text-white font-medium px-12 py-3 rounded-full transition-colors"
+                >
+                  Dashboard
                 </button>
               </div>
             </div>
 
+            <div className="flex justify-center">
+              <div className="relative w-96 h-96">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1EAEDB]/20 to-[#0FA0CE]/20 rounded-full blur-3xl"></div>
+                <img
+                  src="/public/lovable-uploads/372adb2d-8df4-47e8-bf55-95af7a7941b4.png"
+                  alt="Title Deeds"
+                  className="relative rounded-full w-full h-full object-cover shadow-2xl animate-fadeIn"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
