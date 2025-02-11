@@ -47,16 +47,6 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="hidden lg:block">
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-full blur-3xl"></div>
-                <img
-                  src="/public/lovable-uploads/c1f402d5-3226-4b1d-b12c-1e567e5ce8d2.png"
-                  alt="Title Deeds"
-                  className="relative rounded-3xl shadow-2xl animate-fadeIn"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </div>
