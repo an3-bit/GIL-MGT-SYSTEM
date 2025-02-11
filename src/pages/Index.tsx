@@ -55,7 +55,7 @@ const Index = () => {
               <div className="relative w-96 h-96">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#1EAEDB]/20 to-[#0FA0CE]/20 rounded-full blur-3xl"></div>
                 <img
-                  src="/public/lovable-uploads/c1f402d5-3226-4b1d-b12c-1e567e5ce8d2.png"
+                  src="/public/lovable-uploads/372adb2d-8df4-47e8-bf55-95af7a7941b4.png"
                   alt="Title Deeds"
                   className="relative rounded-full w-full h-full object-cover shadow-2xl animate-fadeIn"
                 />
