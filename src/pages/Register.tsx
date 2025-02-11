@@ -26,23 +26,43 @@ const Register = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-
+  
     try {
       if (!formData.email || !formData.password || !formData.name) {
         throw new Error('Please fill in all fields');
       }
-
+  
       if (formData.password !== formData.confirmPassword) {
         throw new Error('Passwords do not match');
       }
-
+  
       if (formData.password.length < 6) {
         throw new Error('Password must be at least 6 characters long');
       }
-
-      const { confirmPassword, ...registerData } = formData;
+  
+      // Split the full name into first and last name
+      const nameParts = formData.name.trim().split(" ");
+      const firstName = nameParts[0] || "";
+      const lastName = nameParts.slice(1).join(" ") || "";
+  
+      if (!firstName || !lastName) {
+        throw new Error("Please enter your full name (First and Last).");
+      }
+  
+      // Generate a username from the email (before @ symbol)
+      const username = formData.email.split("@")[0];
+  
+      // Prepare the corrected data
+      const registerData = {
+        first_name: firstName,
+        last_name: lastName,
+        username,
+        email: formData.email,
+        password: formData.password,
+      };
+  
       await apiClient.post('/v1/register/', registerData);
-      
+  
       toast({
         title: "Success",
         description: "Registration successful. Please login.",
@@ -58,6 +78,7 @@ const Register = () => {
       setIsLoading(false);
     }
   };
+  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary to-primary p-4">
