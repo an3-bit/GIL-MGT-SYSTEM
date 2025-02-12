@@ -54,6 +54,7 @@ const Register = () => {
   
       // Prepare the corrected data
       const registerData = {
+        name: formData.name,
         first_name: firstName,
         last_name: lastName,
         username,
