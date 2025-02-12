@@ -43,7 +43,7 @@ const Index = () => {
                   Register
                 </button>
                 <button
-                  onClick={() => navigate('/dashboard')}
+                  onClick={() => navigate('/login')}
                   className="border-2 border-[#1EAEDB] text-[#1EAEDB] hover:bg-[#1EAEDB] hover:text-white font-medium px-12 py-3 rounded-full transition-colors"
                 >
                   Dashboard
