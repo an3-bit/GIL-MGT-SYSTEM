@@ -30,7 +30,7 @@ const Login = () => {
         throw new Error('Please fill in all fields');
       }
 
-      const response = await apiClient.post('/v1/login/', formData);
+      const response = await apiClient.post('https://gil-mgt.vercel.app/v1/login/', formData);
       toast({
         title: "Success",
         description: "Logged in successfully",

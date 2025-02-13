@@ -62,7 +62,7 @@ const Register = () => {
         password: formData.password,
       };
   
-      await apiClient.post('/v1/register/', registerData);
+      await apiClient.post('https://gil-mgt.vercel.app/v1/register/', registerData);
   
       toast({
         title: "Success",
