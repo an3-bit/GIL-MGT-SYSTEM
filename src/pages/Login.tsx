@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -29,8 +28,9 @@ const Login = () => {
       if (!formData.email || !formData.password) {
         throw new Error('Please fill in all fields');
       }
-
-      const response = await apiClient.post('https://gil-mgt.vercel.app/v1/login/', formData);
+     
+      
+      await apiClient.post('/v1/login/', formData);
       toast({
         title: "Success",
         description: "Logged in successfully",

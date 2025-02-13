@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -61,8 +60,9 @@ const Register = () => {
         email: formData.email,
         password: formData.password,
       };
-  
-      await apiClient.post('https://gil-mgt.vercel.app/v1/register/', registerData);
+      
+      
+      await apiClient.post('/v1/register/', registerData);
   
       toast({
         title: "Success",
@@ -79,7 +79,6 @@ const Register = () => {
       setIsLoading(false);
     }
   };
-  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary to-primary p-4">
